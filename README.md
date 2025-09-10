@@ -109,7 +109,7 @@ pipeline {
     stages {
         stage('Checkout Code') {
             steps {
-                git branch: 'master', url: 'https://github.com/ygminds73/maven-simple-master.git'
+                git branch: 'main', url: 'https://github.com/AniketT-003/maven-simple-master-project.git'
             }
         }
 
@@ -157,5 +157,7 @@ pipeline {
 
 
 jenkins ALL=(ALL) NOPASSWD: /bin/systemctl restart nginx, /bin/rm, /bin/cp
+
 or
+
 sudo chown -R jenkins:jenkins /var/www/html
