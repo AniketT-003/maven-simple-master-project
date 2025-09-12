@@ -71,6 +71,9 @@ da2a59b0-3c0d-4b8e-b309-fc5d3e0e7c0c
 # mkdir -p /var/lib/jenkins/.m2
 # vim /var/lib/jenkins/.m2/settings.xml
 
+sudo mkdir -p /var/lib/jenkins/.m2/repository
+sudo chown -R jenkins:jenkins /var/lib/jenkins/.m2
+
 <settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
           xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0
@@ -161,3 +164,8 @@ jenkins ALL=(ALL) NOPASSWD: /bin/systemctl restart nginx, /bin/rm, /bin/cp
 or
 
 sudo chown -R jenkins:jenkins /var/www/html
+
+sudo chmod -R 755 /var/www/html
+
+# Restart nginx to apply
+sudo systemctl restart nginx
